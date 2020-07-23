@@ -46,6 +46,12 @@ If you want to access the mappings between OAC codes and the groups together, yo
 demography.groups("uk")
 ```
 
+To give:
+
+```text
+{'1A1': ['Rural residents', 'Farming communities', 'Rural workers and families'], '1A2': ['Rural residents', 'Farming communities', 'Established farming communities'] ...
+```
+
 Finally, it can be useful to have these groups encoded with:
 
 ```python

@@ -9,7 +9,7 @@ on post codes. This is currently only implemented for the UK.
 """
 
 setup(
-    name="xanthus",
+    name="demography",
     version=__version__,
     description="Demographic mapping based on UK ONS & census data.",
     long_description=long_description,
