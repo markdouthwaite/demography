@@ -31,7 +31,7 @@ def validate_postcode(postcode: str, origin: str) -> str:
 
 
 @lru_cache(maxsize=1)
-def encoded_groups(origin: str):
+def encoded_groups(origin: str) -> dict:
     census = json.loads(_load_resource(origin, "groups.json"))
     return census
 
