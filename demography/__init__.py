@@ -6,7 +6,7 @@ from functools import lru_cache
 from typing import List, Union, Optional
 
 
-__version__ = "0.0.2.post1"
+__version__ = "0.0.2.post2"
 
 
 RESOURCE_PATH: str = pkg_resources.resource_filename("demography", "data")
