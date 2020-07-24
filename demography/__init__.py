@@ -3,7 +3,7 @@ import os
 import json
 import pkg_resources
 from functools import lru_cache
-from typing import List, Union, Optional
+from typing import List, Union, Optional, Pattern
 
 
 __version__ = "0.0.2.post3"
@@ -20,7 +20,7 @@ def _load_resource(origin: str, filename: str) -> str:
 
 
 @lru_cache(maxsize=128)
-def _load_pattern(origin: str):
+def _load_pattern(origin: str) -> Pattern:
     return re.compile(_load_resource(origin, "regex"))
 
 
