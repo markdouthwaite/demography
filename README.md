@@ -4,6 +4,8 @@ This package implements a simple mechanism for quickly loading demographic data 
 
 The data was taken from [Geoportal](https://geoportal.statistics.gov.uk/datasets).
 
+If you want to jump to seeing how this package can play with `pandas`, [see below](#).
+
 ## Getting started
 
 You can install `demography` with:
@@ -77,3 +79,31 @@ As an additional benefit, you can enable validation for postcodes with:
 ```python
 demography.get("SW1A 0AA", using="encoded_groups", validate=True)
 ```
+
+## Playing with pandas
+
+You can use `demography` to encode `pandas.DataFrame` columns pretty easily too:
+
+```python
+import pandas as pd
+import demography as dm
+
+df = pd.read_csv("my-dataset.csv")
+
+# get the encoded 'super group', 'group', 'sub group' set. 
+data_gen = (dm.get(code, using="encoded_groups") for code in df["postcode"])
+
+# build a dataframe
+dm_df = pd.DataFrame(data=data_gen, columns=["super_group", "group", "sub_group"])
+
+# horizontally concatenate the groups dataframe to your original frame.
+df = pd.concat([df, dm_df], axis=1)
+```
+
+Or alternatively, if you only need `oac11` codes, you can use:
+
+```python
+df["demographic"] = df["postcode"].apply(lambda _: dm.get(_))
+```
+
+Note that you'll need to use the name of your column for `postcode`! 

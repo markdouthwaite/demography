@@ -3,16 +3,15 @@ from setuptools import find_packages
 
 from demography import __version__
 
-long_description = """
-This package implements a simple mechanism for quickly loading demographic data based
-on post codes. This is currently only implemented for the UK.
-"""
+with open("README.md") as readme:
+    long_description = readme.read()
 
 setup(
     name="demography",
     version=__version__,
     description="Demographic mapping based on UK ONS & census data.",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     author="Mark Douthwaite",
     author_email="mark@douthwaite.io",
     url="https://github.com/markdouthwaite/demography",
@@ -29,5 +28,6 @@ setup(
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    include_package_data=True,
     packages=find_packages(),
 )

@@ -6,7 +6,7 @@ from functools import lru_cache
 from typing import List, Union, Optional
 
 
-__version__ = "0.0.1a0"
+__version__ = "0.0.2.post1"
 
 
 RESOURCE_PATH: str = pkg_resources.resource_filename("demography", "data")
@@ -56,7 +56,11 @@ def oac_map(origin: str) -> dict:
 
 
 def _get_parts(p: str) -> List[str]:
-    return p.split(" ")
+    parts = p.split(" ")
+    if len(parts) == 1:
+        return [parts[0], ""]
+    else:
+        return parts
 
 
 def _get_oac(p: str, s: str, origin: str) -> str:

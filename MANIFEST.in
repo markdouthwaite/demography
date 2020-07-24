@@ -1,0 +1,5 @@
+include demography/data/uk/encodings.json
+include demography/data/uk/groups.json
+include demography/data/uk/tree.json
+include demography/data/uk/map.json
+include demography/data/uk/regex
