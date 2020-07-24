@@ -4,7 +4,13 @@ This package implements a simple mechanism for quickly loading demographic data 
 
 The data was taken from [Geoportal](https://geoportal.statistics.gov.uk/datasets).
 
-If you want to jump to seeing how this package can play with `pandas`, [see below](#).
+If you want to jump to seeing how this package can play with `pandas`, [see below](#playing-with-pandas).
+
+The package comes with built-in caching, makes extensive use of hash maps (i.e. dictionaries), and should generally be pretty fast!
+
+As well as providing mappings to `OAC11` groups (demographic codes), you can also map to lower-level groups within these codes too. See below for examples.
+
+Hopefully it'll save you having to repeatedly find, load and transform ONS census data!
 
 ## Getting started
 
