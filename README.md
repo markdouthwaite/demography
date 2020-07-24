@@ -4,7 +4,7 @@ This package implements a simple mechanism for quickly loading demographic data 
 
 The data was taken from [Geoportal](https://geoportal.statistics.gov.uk/datasets).
 
-If you want to jump to seeing how this package can play with `pandas`, [see below](#).
+If you want to jump to seeing how this package can play with `pandas`, [see below](#playing-with-pandas).
 
 ## Getting started
 

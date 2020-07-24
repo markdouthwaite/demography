@@ -6,7 +6,7 @@ from functools import lru_cache
 from typing import List, Union, Optional
 
 
-__version__ = "0.0.2.post2"
+__version__ = "0.0.2.post3"
 
 
 RESOURCE_PATH: str = pkg_resources.resource_filename("demography", "data")
@@ -83,7 +83,13 @@ def _get_encoded_groups(p: str, s: str, origin: str) -> List[int]:
 
 
 @lru_cache(maxsize=1024)
-def get(p: str, using: str = "oac", validate=False, origin: str = "uk", default: Optional[str] = None) -> Union[str, List[str], List[int], None]:
+def get(
+    p: str,
+    using: str = "oac",
+    validate=False,
+    origin: str = "uk",
+    default: Optional[str] = None,
+) -> Union[str, List[str], List[int], None]:
     p = validate_postcode(p, origin) if validate else p
     prefix, suffix = _get_parts(p)
     try:
